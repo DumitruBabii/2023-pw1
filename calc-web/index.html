@@ -1,0 +1,44 @@
+<html>
+<head>
+	<title>Babii Dumitru</title>
+	<script>
+		  var znach;
+	  function calculator() {
+	    var result;
+	    var x = Number(document.getElementById("x").value);
+	    var y = Number(document.getElementById("y").value);
+	    switch (znach) {
+	      case '+':
+	        result = x + y;
+	        break;
+	      case '-':
+	        result = x - y;
+	        break;
+	      case '*':
+	        result = x * y;
+	        break;
+	      case '/':
+	        result = x / y;
+	        break;
+	    }
+	    document.getElementById("result").innerHTML = result;
+	  }
+	  </script>
+</head>
+<body>
+<center>
+	Cifra x: <input id="x" />
+	Cifra Y: <input id="y" />
+	<br>
+	<div id="button">
+	  <button id="plus" onclick="znach='+'">+</button>
+	  <button id="minus" onclick="znach='-'">-</button>
+	  <button id="times" onclick="znach='*'">x</button>
+	  <button id="divide" onclick="znach='/'">:</button>
+	</div>
+
+	<button onclick="calculator()">Calculate</button>
+	<p id="result"></p>
+<center>
+</body>
+</html>
