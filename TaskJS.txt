@@ -1,0 +1,536 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotiuba Rostislav</title>
+  <style>
+  /* #chessboard {
+    width : 300px;
+    height: 300px;
+    }
+    #field {
+        width: 600px;
+        height: 400px;
+        border: 2px solid black;
+        position: relative;
+      }
+      #ball {
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: red;
+        position: absolute;
+      } */
+    </style>
+</head>
+<body>
+  <!-- <button id="minus-btn">-</button>
+<input id="number-input" type="number" min="0" max="9" value="0" readonly>
+<button id="plus-btn">+</button>
+
+<table id="chessboard"></table> -->
+<!-- <div id="field">		
+	<div id="ball"></div>
+</div> -->
+ <!-- <input type="text" id="numberInput"> -->
+ <!-- <table id="users-table">
+  <thead>
+    <tr>
+      <th>Имя</th>
+      <th>Пользователь</th>
+      <th>Админ</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ion</td>
+      <td>Yes</td>
+      <td></td>
+      <td><button onclick="deleteRow(this)">X</button></td>
+    </tr>
+    <tr>
+      <td>Alex</td>
+      <td></td>
+      <td>Yes</td>
+      <td><button onclick="deleteRow(this)">X</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<form id="add-user-form">
+  <input type="text" name="name" placeholder="Имя">
+  <input type="checkbox" name="user" id="user-checkbox">
+  <label for="user-checkbox">Пользователь</label>
+  <input type="checkbox" name="admin" id="admin-checkbox">
+  <label for="admin-checkbox">Админ</label>
+  <button type="submit">Добавить</button>
+</form> -->
+
+
+</body>
+<script>
+    //Task #1 - conditional operator
+ let x = parseInt(prompt("Введи число от 0 до 9"))
+     switch(x){
+     case 0:
+         console.log("0");
+         break;
+     case 1:
+         console.log("1");
+         break;
+     case 2:
+         console.log("2");
+         break;
+     case 3:
+         console.log("3");
+         break; 
+     case 4:
+         console.log("4");
+         break;
+     case 5:
+         console.log("5");
+         break;
+     case 6:
+         console.log("6");
+         break;
+     case 7:
+         console.log("7");
+         break;
+     case 8:
+         console.log("8");
+         break;
+     case 9:
+         console.log("9");
+         break;
+}
+
+//Task #2 - loops
+function suma (a,b){
+     let sum = 0;
+     for (let i= a; i <= b; i++){
+         if (i % 2 === 0){
+             sum += i;
+         }
+     }
+     return sum;
+}
+console.log(suma(2,30));
+console.log(suma(12,21));
+
+//Task #3 - conditional operator
+let a = parseInt(prompt('a = '))
+let b = parseInt(prompt('b = '))
+let c = parseInt(prompt('c = '))
+console.log(Math.max(a,Math.max(b,c)));
+console.log(Math.min(a,Math.min(b,c)));
+
+//Task #4 - functions
+function ucPervi(str) {
+
+const upper = str.charAt(0).toUpperCase() + str.slice(1);
+return upper;
+}
+const str = prompt('Enter a string: ');
+const result = ucPervi(str);
+console.log(result);
+
+//Task #5 - String
+
+function extractCurrency(str) {
+  return +str.slice(1);
+}
+let str = prompt("Введи число $")
+let value = extractCurrency(str);
+console.log(value);
+
+//Task #6 - conditional operator
+
+let value = prompt('Введи число', 0);
+
+if (value > 0) {
+  alert( 1 );
+} else if (value < 0) {
+  alert( -1 );
+} else {
+  alert( "Error" );
+}
+
+//Task #7 - conditional operator
+
+let age = parseInt(prompt("Возраст  "));
+
+if (age >= 14 && age <= 90){
+    alert("Exzact!!!")
+}
+else{
+    alert("error")
+}
+
+if (!(age < 14 || age > 90)){
+   alert("Exzact!!!")
+}
+ else{
+    alert("error") 
+}
+
+//Task #8 - conditional operator
+
+let userNume = prompt("Логин", '');
+
+if (userNume === 'user1') {
+
+let pass = prompt('Пароль', '');
+
+   if (pass === '1111') {
+     alert( 'Привет' );
+   } else if (pass === '' || pass === null) {
+     alert( 'Ошибка');
+   } else {
+     alert( 'Неверный пароль' );
+   }
+ } else if (userNume === '' || userNume === null) {
+   alert( 'Ошибка валидации' );
+} else {
+   alert( "Ты кто" );
+ }
+
+//Task #9 - user interaction
+
+ let name = prompt("Твое имя?", "");
+ alert(`Привет,${name}!`);
+ let isFamiliar = confirm("ты знаком с JS?");
+     if (isFamiliar){
+         alert("Молодец!!!");
+     }else{
+ alert("Может начать изучение прямо сейчас?");
+     }
+
+//3.4.2 Practical tasks for Arrays
+//Task #1 - array display
+
+const numbers = [1,2,3,4,5];
+ for (let i = 0; i < numbers.length; i++) {
+   console.log(numbers[i]);
+ }
+ let i = 0;
+ while (i < numbers.length) {
+   console.log(numbers[i]);
+   i++;
+ }
+ let i = 0;
+ do {
+   console.log(numbers[i]);
+   i++;
+ } while (i < numbers.length);
+ for (let i in numbers) {
+   console.log(numbers[i]);
+ }
+
+ for (let number of numbers) {
+   console.log(number);
+ }
+numbers.forEach(number => console.log(number));
+numbers.map(number => console.log(number));
+
+//Task #2 - array processing
+let array = [2, 6, 0, -4, 20, -400, 400, 0, 200, 66];
+ function sort(array){
+     array.sort ((a,b) => b - a);
+     console.log(array);
+ }
+ sort(array);
+ function LessThanFive(array) {
+   for (let i = 0; i < array.length; i++) {
+     if (array[i] < 5) {
+       console.log(array[i]);
+     }
+   }
+ }
+ LessThanFive(array)
+ function MaxMin(array) {
+   let max = array[0], min = array[0];
+   let maxIndex = 0, minIndex = 0;
+   for (let i = 1; i < array.length; i++) {
+     if (array[i] > max) {
+       max = array[i];
+       maxIndex = i;
+     } else if (array[i] < min) {
+       min = array[i];
+       minIndex = i;
+     }
+   }
+   console.log(`Максимальный элемент ${max} на позиции ${maxIndex}`);
+   console.log(`Минимальный элемент ${min} на позиции ${minIndex}`);
+ }
+ MaxMin(array)
+
+function Average(array) {
+  let sum = 0;
+   for (let i = 0; i < array.length; i++) {
+     sum += array[i];
+  }
+   let avg = sum / array.length;
+   for (let i = 0; i < array.length; i++) {
+     if (array[i] > avg) {
+       console.log(array[i]);
+     }
+   }
+ }
+ Average(array)
+
+//-Task #3 - array functions
+  start =parseInt(prompt("")); 
+  end =parseInt(prompt ("")); 
+ function extract(start, end) {
+ const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+   return arr.slice(start, end + 1);
+ }
+ console.log (extract(start, end))
+
+//3.5.2 Practical tasks for Objects
+//Task #1 - object creation
+
+ let user = {};
+ user={name : "Rostislav"};
+ user={surname : "Cotiuba"};
+ user.name = "RK"
+ delete user.name
+
+//Task #2 - working with properties
+ function multiplyNumeric(obj) {
+   for (let key in obj) {
+     if (typeof obj[key] === "number") {
+       obj[key] *= 2;
+     }
+   }
+ }
+
+ let menu = {
+   width: 250,
+   height: 350,
+   title: "Menu"
+ };
+
+ multiplyNumeric(menu);
+
+ console.log(menu);
+
+//Task #5 - object processing
+ let person = {
+ 	name: `Name`,
+ 	age: 24,
+ 	salary: 2752.57,
+ 	contacts: {
+ 		phone: `777`,
+ 		email: `email@mail.com`
+ },
+ address: `Moldova, Balti`
+ }
+ person.contacts.phone=`+373568759`;
+ delete person.address
+
+//Task #8 - working with keys
+ const Days = {
+	"Mo": "Понедельник",
+ 	"Tu": "Вторник",
+ 	"We": "Среда",
+ 	"Th": "Четверг",
+ 	"Fr": "Пятница",
+ 	"Sa": "Суббота",
+ 	"Su": "Воскресенье",
+ }
+ function translate(obj) {
+   const translations = {
+     "Mo": "Luni",
+     "Tu": "Marti",
+     "We": "Miercuri",
+     "Th": "Joi",
+     "Fr": "Vineri",
+     "Sa": "Simbata",
+     "Su": "Duminica",
+   };
+
+   const result = {};
+   for (let k in obj) {
+     if (k in translations) {
+       result[k] = [translations[k]];
+     } else {
+       result[k] = obj[k];
+     }
+   }
+   return result;
+ }
+ const translatedDays = translate(Days);
+ console.log(translatedDays);
+
+//3.7.2 Practical tasks for JSON
+//Task #1 - converting Array to JSON
+const names= ["james", "jake"];
+ const xo = JSON.stringify(names);
+ console.log (xo)
+
+//Task #2 - converting Object to JSON
+const power={voltage: 250,current: 12};
+const CP = JSON.stringify (power);
+console.log (CP)
+//Task #3 - converting JSON to Array
+
+const names= `["james", "jake"]`;
+const xo = JSON.parse(names);
+console.log (xo)
+
+//Task #4 - converting JSON to Object
+ const IK=`{"name": "Ion Creanga", "age": "123"}`;
+ const UK = JSON.parse(IK);
+ console.log(UK)
+
+//Task #6 - parsing JSON
+
+ const employees = [
+   {
+    name: "Elena",
+     surname: "Spataru",
+     position: "Manager",
+     salary: 7000,
+  },
+  {
+     name: "Alexandru",
+     surname: "Porcescu",
+     position: "Developer",
+     salary: 12000,
+   },
+   {
+     name: "Ion",
+     surname: "Popa",
+     position: "Developer",
+     salary: 25000,
+   },
+ ];
+
+
+function printEmployees() {
+   let output = "";
+   employees.forEach(function (employee) {
+     output += `<div>${employee.name} ${employee.surname} - ${employee.position}, Salary: ${employee.salary}</div>`;
+   });
+   document.getElementById("employees-list").innerHTML = output;
+ }
+ function calculateSalary() {
+   let sum = 0;
+   let min = Infinity;
+   let max = -Infinity;
+
+   employees.forEach(function (employee) {
+     sum += employee.salary;
+     if (employee.salary < min) {
+       min = employee.salary;
+     }
+     if (employee.salary > max) {
+       max = employee.salary;
+     }
+   });
+   let average = sum / employees.length;
+
+   document.getElementById(
+     "salary-info"
+   ).innerHTML = `Average salary: ${average}, Minimum salary: ${min}, Maximum salary: ${max}, Total salary: ${sum}`;
+ }
+
+ printEmployees();
+ calculateSalary();
+
+//4.1.2.	Practical tasks for DOM
+//Task #1 - document loading event
+ document.addEventListener('DOMContentLoaded', function() {
+   document.body.style.backgroundColor = 'red';
+ });
+
+
+//ask #2 - document loading event
+ document.addEventListener('DOMContentLoaded', function() {
+   setTimeout(function() {
+     document.body.style.backgroundColor = 'blue';
+   }, 3000);
+ });
+
+//Task #5 - changing DOM
+// Получаем элементы со страницы
+ const minusBtn = document.getElementById('minus-btn');
+ const numberInput = document.getElementById('number-input');
+ const plusBtn = document.getElementById('plus-btn');
+
+ // Обработчик событий для кнопки -
+ minusBtn.addEventListener('click', function() {
+   let currentValue = parseInt(numberInput.value); // Получаем текущее значение из инпута и преобразуем его в число
+   if (currentValue > 0) { // Если текущее значение больше 0, уменьшаем на 1 и записываем в инпут
+     currentValue--;
+     numberInput.value = currentValue;
+   }
+   if (currentValue === 0) { // Если текущее значение равно 0, делаем кнопку - неактивной
+     minusBtn.disabled = true;
+   }
+   plusBtn.disabled = false; // Всегда делаем кнопку + активной
+ });
+
+//Обработчик событий для кнопки +
+ plusBtn.addEventListener('click', function() {
+   let currentValue = parseInt(numberInput.value); // Получаем текущее значение из инпута и преобразуем его в число
+   if (currentValue < 9) { // Если текущее значение меньше 9, увеличиваем на 1 и записываем в инпут
+     currentValue++;
+     numberInput.value = currentValue;
+   }
+   if (currentValue === 9) { // Если текущее значение равно 9, делаем кнопку + неактивной
+     plusBtn.disabled = true;
+   }
+   minusBtn.disabled = false; // Всегда делаем кнопку - активной
+ });
+//Task #6 - adding elements to DOM
+
+
+ const boardSize = 8; // размер доски
+     const table = document.querySelector('#chessboard'); // выбираем таблицу
+
+     for (let i = 0; i < boardSize; i++) { // цикл для строк таблицы
+         const row = document.createElement('tr'); // создаем строку таблицы
+         for (let j = 0; j < boardSize; j++) { // цикл для ячеек таблицы
+             const cell = document.createElement('td'); // создаем ячейку таблицы
+             if ((i + j) % 2 === 0) { // определяем, какую ячейку закрашивать черным цветом
+                 cell.style.backgroundColor = 'black';
+             }
+             row.appendChild(cell); // добавляем ячейку в строку
+         }
+         table.appendChild(row); // добавляем строку в таблицу
+     }
+
+//Task #20 - working with DOM
+ function deleteRow(button) {
+   var row = button.parentNode.parentNode;
+   row.parentNode.removeChild(row);
+ }
+
+ function addUser(event) {
+   event.preventDefault();
+   var name = this.elements["name"].value;
+   var user = this.elements["user"].checked ? "X" : "";
+   var admin = this.elements["admin"].checked ? "X" : "";
+  
+   var table = document.getElementById("users-table").getElementsByTagName("tbody")[0];
+   var newRow = table.insertRow();
+   var nameCell = newRow.insertCell();
+   var userCell = newRow.insertCell();
+   var adminCell = newRow.insertCell();
+   var buttonCell = newRow.insertCell();
+  
+   nameCell.innerHTML = name;
+   userCell.innerHTML = user;
+   adminCell.innerHTML = admin;
+   buttonCell.innerHTML = '<button onclick="deleteRow(this)">X</button>';
+ 
+   this.reset();
+ }
+ document.getElementById("add-user-form").addEventListener("submit", addUser);
+</script>
+</html>
